@@ -1,4 +1,5 @@
 CherryIvy::Application.routes.draw do
+  get "reports/show"
   get "events/index"
   get "events/create"
   get "events/show"
