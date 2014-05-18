@@ -1,4 +1,9 @@
 CherryIvy::Application.routes.draw do
+  get "events/index"
+  get "events/create"
+  get "events/show"
+  get "events/edit"
+  get "events/deactivate"
   get "charities/index"
   get "charities/create"
   get "charities/edit"
