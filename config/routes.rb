@@ -1,4 +1,16 @@
 CherryIvy::Application.routes.draw do
+  get "reports/show"
+  get "events/index"
+  get "events/create"
+  get "events/show"
+  get "events/edit"
+  get "events/deactivate"
+  get "charities/index"
+  get "charities/create"
+  get "charities/edit"
+  get "charities/show"
+  get "charities/deactivate"
+  get "calendars/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

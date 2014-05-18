@@ -11,3 +11,6 @@
 
 # Ignore Vagrant artifacts
 .vagrant/
+
+# Mac OSX garbage
+.DS_Store
