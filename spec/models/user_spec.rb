@@ -62,8 +62,10 @@ describe User do
 
   describe "when email address or login is already taken" do
     before do
-      user_with_same_email = @user.dup
-      user_with_same_email.save
+      user_with_same_particulars = @user.dup
+      user_with_same_particulars.email.upcase!
+      user_with_same_particulars.login.upcase!
+      user_with_same_particulars.save
     end
 
     it { should_not be_valid }
