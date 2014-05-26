@@ -19,4 +19,14 @@ describe User do
     it { should_not be_valid }
   end
 
+  describe "when login is not present" do
+    before { @user.login = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when email is not present" do
+    before { @user.email = " " }
+    it { should_not be_valid }
+  end
+
 end
