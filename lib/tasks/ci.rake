@@ -1,10 +1,10 @@
 namespace :ci do
-  desc "params: login, email, password: create a superadmin with those properties"
+  desc "params: login, email, password. Create a superadmin with those properties"
   task :create_superadmin, [:login, :email, :password] => :environment do |t, args|
   	user = User.find_by_name(args[:login].downcase)
   	unless user.nil?
-	  puts "User already exists."
-	  exit 0
+	    puts "User already exists."
+	    exit 0
   	end
 
   	password_mask = '*' * args[:password].length
