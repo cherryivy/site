@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+  before_save do 
+  	self.email = email.downcase
+  	self.login = login.downcase 
+  end
+
   validates :name,  presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
   validates :login, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
 
