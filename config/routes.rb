@@ -1,4 +1,7 @@
 CherryIvy::Application.routes.draw do
+  get "charities/new"
+  get "charities/update"
+  get "charities/view"
   get "philanthropists/new"
   get "philanthropists/create"
   get "philanthropists/edit"
