@@ -1,4 +1,9 @@
 CherryIvy::Application.routes.draw do
+  get "philanthropists/new"
+  get "philanthropists/create"
+  get "philanthropists/edit"
+  get "philanthropists/update"
+  get "philanthropists/view"
   root "calendars#index"
   get "reports/show"
   get "events/index"
