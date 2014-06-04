@@ -1,8 +1,8 @@
 CherryIvy::Application.routes.draw do
+  match '/signup', to: 'philanthropists#new', via: 'get'
   get "charities/new"
   get "charities/update"
   get "charities/view"
-  get "philanthropists/new"
   get "philanthropists/create"
   get "philanthropists/edit"
   get "philanthropists/update"

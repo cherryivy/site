@@ -1,2 +1,8 @@
-<h1>Philanthropists#new</h1>
-<p>Find me in app/views/philanthropists/new.html.erb</p>
+<h1>Sign Up</h1>
+<h2>Be a philanthropist today</h2>
+
+<%= form_for @philanthropist, url: { action: 'create' } do |f| %>
+  <%= label_tag(:name, 'Name:') %>
+  <%= f.text_field :name %>
+  <%= submit_tag 'Register' %>
+<% end %>

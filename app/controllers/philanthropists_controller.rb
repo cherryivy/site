@@ -1,5 +1,6 @@
 class PhilanthropistsController < ApplicationController
   def new
+    @philanthropist = Philanthropist.new
   end
 
   def create

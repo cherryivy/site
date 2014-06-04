@@ -24,6 +24,7 @@
 		<ul id="pages">
 			<a href="#"><li class="page_name">Profile</li></a>
 			<a href="#"><li class="page_name">Activity</li></a>
+			<%= link_to "Sign Up", signup_path, class: 'page_name'  %>
 		</ul>
 		<form id="search">
 			<input name="search" type="text" value="Search" class="search-input" onfocus="if(this.value == 'Search') 	{this.value=''}" onblur="if(this.value == ''){this.value ='Search'}"/>
