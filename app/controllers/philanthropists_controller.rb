@@ -4,6 +4,12 @@ class PhilanthropistsController < ApplicationController
   end
 
   def create
+    new_user = Philanthropist.new(user_params)
+    if(new_user.save)
+      redirect_to new_user
+    else
+      render :new
+    end
   end
 
   def edit
@@ -12,6 +18,14 @@ class PhilanthropistsController < ApplicationController
   def update
   end
 
-  def view
+  def show
+    @philanthropist = Philanthropist.find(params[:id])
   end
+
+  protected 
+
+  def user_params
+    params.require(:philanthropist).permit(:name, :login, :email, :password, :password_confirmation)
+  end
+
 end
