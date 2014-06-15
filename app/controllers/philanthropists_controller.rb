@@ -4,9 +4,9 @@ class PhilanthropistsController < ApplicationController
   end
 
   def create
-    new_user = Philanthropist.new(user_params)
-    if(new_user.save)
-      redirect_to new_user
+    @philanthropist = Philanthropist.new(user_params)
+    if(@philanthropist.save)
+      redirect_to signup_path
     else
       render :new
     end
