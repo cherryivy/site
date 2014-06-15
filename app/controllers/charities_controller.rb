@@ -1,5 +1,5 @@
 class CharitiesController < ApplicationController
-  def index
+  def new
   end
 
   def create
@@ -8,9 +8,9 @@ class CharitiesController < ApplicationController
   def edit
   end
 
-  def show
+  def update
   end
 
-  def deactivate
+  def view
   end
 end
