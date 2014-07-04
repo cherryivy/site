@@ -6,16 +6,10 @@ class PhilanthropistsController < ApplicationController
   def create
     @philanthropist = Philanthropist.new(user_params)
     if(@philanthropist.save)
-      redirect_to signup_path
+      redirect_to root_path
     else
       render :new
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   def show
