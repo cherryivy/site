@@ -9,13 +9,12 @@
     / navigation bar
     .menu1
       .page_width1
-        %a{ href: home_path }
+        %a{ href: root_path }
           #logo_frame
             #logo
               ci
         %ul#pages
           %li
-            = current_user ? current_user.login : 
-              "#{link_to "Sign Up", signup_path, class: 'page_name'} / #{link_to "Login",   login_path,  class: 'page_name'}"
+            = current_user ? current_user.login : "#{link_to "Sign Up", signup_path, class: 'page_name'} / #{link_to "Login",   login_path,  class: 'page_name'}"
     / end navigation bar
     = yield
