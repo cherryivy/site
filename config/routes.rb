@@ -1,6 +1,6 @@
 CherryIvy::Application.routes.draw do
 
-  resources :charities,       except: :destroy
+  resources :charities,       only: [:new, :create, :view]
   resources :philanthropists, except: :destroy
   resources :events,          except: :destroy
   resource  :session,         only: [:new, :create, :destroy]
