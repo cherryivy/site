@@ -10,8 +10,8 @@
     = f.label           :login
     = f.text_field      :login
   %p
-   = f.label            :contact_person
-   = f.text_field       :contact_person
+    = f.label            :contact_person
+    = f.text_field       :contact_person
 
   %p
     = f.label           :email
@@ -28,9 +28,6 @@
   %p
     = f.label           :password_confirmation
     = f.password_field  :password_confirmation
-
-  %p
-    = f.submit 'Register'
 
   %p
     =f.submit "Create", class: 'button'
