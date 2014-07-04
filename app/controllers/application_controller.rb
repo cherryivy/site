@@ -16,14 +16,14 @@ class ApplicationController < ActionController::Base
   def limit_to(roles)
     valid_roles = []
     if roles.is_a? Symbol
-      valid_roles << roles.camelize.constantize
+      valid_roles << roles.to_s.camelize.constantize
     else
-      roles.each { |r| valid_roles << r.camelize.constantize }
+      roles.each { |r| valid_roles << r.to_s.camelize.constantize }
     end
 
     allowed = false
     valid_roles.each { |v| allowed = true if current_user.is_a? v }
-    allowed
+    raise ActionController::RoutingError.new('Not Found') unless allowed
   end
 
 end

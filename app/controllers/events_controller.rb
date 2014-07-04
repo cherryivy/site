@@ -1,5 +1,11 @@
 class EventsController < ApplicationController
+  before_action only: [:new, :create] { limit_to :charity  }
+
   def index
+  end
+
+  def new
+    @event = Event.new
   end
 
   def create
@@ -8,9 +14,4 @@ class EventsController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
-  def deactivate
-  end
 end
