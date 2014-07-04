@@ -12,12 +12,6 @@ class PhilanthropistsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def show
     @philanthropist = Philanthropist.find(params[:id])
   end
