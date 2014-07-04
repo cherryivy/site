@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 gem 'pg', '~> 0.17.1'
+gem 'haml-rails', '~> 0.5.3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -25,6 +26,6 @@ group :test do
 end
 
 group :development, :test do
-  gem 'debugger'
+  gem 'pry', '~> 0.10.0'
   gem 'rspec-rails', '2.13.1'
 end
