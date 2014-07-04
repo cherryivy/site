@@ -13,8 +13,8 @@ class CharitiesController < ApplicationController
 
   end
 
-  def view
-    @charity = Charity.find(params[:charity_id])
+  def show
+    @charity = Charity.find(params[:id])
   end
 
   protected 
