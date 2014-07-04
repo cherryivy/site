@@ -3,4 +3,34 @@
 
 = form_for @charity do |f|
   %p
+    = f.label           :name
+    = f.text_field      :name
+  
+  %p
+    = f.label           :login
+    = f.text_field      :login
+  %p
+   = f.label            :contact_person
+   = f.text_field       :contact_person
+
+  %p
+    = f.label           :email
+    = f.text_field      :email
+
+  %p
+    = f.label           :phone
+    = f.text_field      :phone
+
+  %p
+    = f.label           :password
+    = f.password_field  :password
+  
+  %p
+    = f.label           :password_confirmation
+    = f.password_field  :password_confirmation
+
+  %p
+    = f.submit 'Register'
+
+  %p
     =f.submit "Create", class: 'button'
