@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :user_slug, :login_slug
 
   protected
 
@@ -24,6 +24,16 @@ class ApplicationController < ActionController::Base
     allowed = false
     valid_roles.each { |v| allowed = true if current_user.is_a? v }
     raise ActionController::RoutingError.new('Not Found') unless allowed
+  end
+
+  def user_slug
+    "#{current_user.login} (#{current_user.login}) \
+      #{view_context.link_to "Logout", logout_path,  class: 'page_name'}".html_safe
+  end
+
+  def login_slug
+    "#{view_context.link_to "Sign Up", signup_path, class: 'page_name'} \
+      / #{view_context.link_to "Login", login_path, class: 'page_name'}".html_safe
   end
 
 end
