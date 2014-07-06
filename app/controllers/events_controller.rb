@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(user_params)
+    @event = Event.create(user_params.merge charity_id: session[:user_id])
     if(@event.save)
       redirect_to @event
     else
@@ -26,7 +26,6 @@ class EventsController < ApplicationController
 
   def user_params
     ret = params.require(:event).permit(:title, :start_time, :end_time, :location, :description)
-    ret[:charity_id] = session[:user_id]
   end
 
 end
