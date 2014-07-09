@@ -7,15 +7,15 @@
     %title
       Cherry Ivy - Be a Philanthropist Today
   %body
-    / navigation bar
-    .menu1
-      .page_width1
-        %a{ href: root_path }
-          #logo_frame
-            #logo
-              ci
-        %ul#pages
+    .navbar
+      .navbar-inner
+        = link_to 'ci', root_path, { class: 'brand' }
+        %ul.nav
           %li
-            = current_user ? user_slug : login_slug
-    / end navigation bar
-    = yield
+            = link_to 'new charity', new_charity_path
+          %li                
+            = link_to 'new event', new_event_path
+          %li
+            = current_user ? user_slug : login_slug    
+    .container-fluid
+      = yield

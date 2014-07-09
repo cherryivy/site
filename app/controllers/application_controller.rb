@@ -28,12 +28,12 @@ class ApplicationController < ActionController::Base
 
   def user_slug
     "#{current_user.login} (#{current_user.login}) \
-      #{view_context.link_to "Logout", logout_path,  class: 'page_name'}".html_safe
+      #{view_context.link_to "Logout", logout_path}".html_safe
   end
 
   def login_slug
-    "#{view_context.link_to "Sign Up", signup_path, class: 'page_name'} \
-      / #{view_context.link_to "Login", login_path, class: 'page_name'}".html_safe
+    "#{view_context.link_to "Sign Up", signup_path} \
+      / #{view_context.link_to "Login", login_path}".html_safe
   end
 
 end
