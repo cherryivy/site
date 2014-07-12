@@ -19,4 +19,6 @@
               = link_to 'new event', new_event_path
           %p.navbar-text
             = current_user ? user_slug : login_slug
+      - flash.each do |name, msg|
+        = flash_message name, msg
       = yield

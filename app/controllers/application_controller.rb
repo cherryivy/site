@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :user_slug, :login_slug
+  helper_method :current_user, :user_slug, :login_slug, :flash_message
 
   protected
 
@@ -27,11 +27,15 @@ class ApplicationController < ActionController::Base
   end
 
   def user_slug
-    "#{current_user.login} (#{current_user.type}) #{view_context.link_to "Logout", logout_path}".html_safe
+    "#{current_user.login} (#{current_user.type}) #{view_context.link_to "logout", logout_path}".html_safe
   end
 
   def login_slug
-    "#{view_context.link_to "Sign Up", signup_path} / #{view_context.link_to "Login", login_path}".html_safe
+    "#{view_context.link_to "sign up", signup_path} / #{view_context.link_to "login", login_path}".html_safe
+  end
+
+  def flash_message(name, msg)
+    "<div class='alert alert-#{name == :notice ? 'success' : 'error'}'>#{msg}</div>".html_safe
   end
 
 end
