@@ -12,8 +12,8 @@
         .navbar-inner
           %ul.nav.navbar-nav.pull-left
             %li= link_to 'ci', root_path, { class: 'brand' }
-            %li= link_to 'new charity', new_charity_path
-            %li= link_to 'new event', new_event_path
+            %li= link_to('new charity', new_charity_path) if current_user.is_a? SuperAdmin
+            %li= link_to('new event', new_event_path) if current_user.is_a? Charity
           %p.navbar-text= current_user ? user_slug : login_slug
       - flash.each do |name, msg|
         %a.close{data: {dismiss: "alert"}} x &nbsp;
