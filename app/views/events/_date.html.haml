@@ -1,4 +1,9 @@
-%h2 
-  Events for
-  = event_date.to_s :long
-%p &nbsp;
+- events = events_by_date(event_date)
+%h2=  "Events for #{event_date.to_s :long}" if events.count > 0
+- events.each do |e|
+  %p
+    %b
+      = "#{e.title} by #{e.charity.name}"
+      = "(#{e.start_time.strftime("%H:%M")} - #{e.end_time.strftime("%H:%M")})"
+    %br
+    = e.description
