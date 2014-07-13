@@ -2,19 +2,20 @@
 %html
   %head
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = stylesheet_link_tag    "custom",      media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application",               "data-turbolinks-track" => true
     = csrf_meta_tags
+    %title
+      Cherry Ivy - Be a Philanthropist Today
   %body
-    / navigation bar
-    .menu1
-      .page_width1
-        %a{ href: root_path }
-          #logo_frame
-            #logo
-              ci
-        %ul#pages
-          %li
-            = current_user ? user_slug : login_slug
-    / end navigation bar
-    = yield
+    .container-fluid
+      .navbar
+        .navbar-inner
+          %ul.nav.navbar-nav.pull-left
+            %li= link_to 'ci', root_path, { class: 'brand' }
+            %li= link_to('new charity', new_charity_path) if current_user.is_a? SuperAdmin
+            %li= link_to('new event', new_event_path) if current_user.is_a? Charity
+          %p.navbar-text= current_user ? user_slug : login_slug
+      - flash.each do |name, msg|
+        %a.close{data: {dismiss: "alert"}} x &nbsp;
+        = flash_message name, msg
+      = yield
