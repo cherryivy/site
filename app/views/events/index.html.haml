@@ -1,12 +1,2 @@
-%h1
-  Events for 
-  = Date.today.to_s :long
-%p &nbsp;
-%h1
-  Events for 
-  = (Date.today + 1).to_s  :long
-%p &nbsp;
-%h1
-  Events for 
-  = (Date.today + 2).to_s  :long
-%p &nbsp;
+- (0..7).each do |n|
+  = render partial: 'date', locals: { event_date: (Date.today + n) }
