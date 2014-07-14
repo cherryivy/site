@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.create(user_params.merge charity_id: session[:user_id])
+    @event = Event.create(event_params.merge charity_id: session[:user_id])
     if(@event.save)
       redirect_to @event
     else
@@ -26,8 +26,9 @@ class EventsController < ApplicationController
 
   protected
 
-  def user_params
-    ret = params.require(:event).permit(:title, :start_time, :end_time, :location, :description)
+  def event_params
+    ret = params.require(:event).permit(:title, :start_time, :end_time, :location, 
+      :description, :cover_image)
   end
 
   def events_by_date(event_date)
