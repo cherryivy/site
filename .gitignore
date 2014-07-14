@@ -15,3 +15,6 @@ database.yml
 
 # Mac OSX garbage
 .DS_Store
+
+# Images uploaded
+public/system
