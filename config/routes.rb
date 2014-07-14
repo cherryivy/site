@@ -7,8 +7,8 @@ CherryIvy::Application.routes.draw do
 
   root to: 'events#index'
 
-  match '/signup', to: 'philanthropists#new', via: 'get', as: :signup
-  match '/login',  to: 'sessions#new',        via: 'get', as: :login
-  match '/logout', to: 'sessions#destroy',    via: 'get', as: :logout
+  match '/register', to: 'philanthropists#new', via: 'get', as: :signup
+  match '/login',    to: 'sessions#new',        via: 'get', as: :login
+  match '/logout',   to: 'sessions#destroy',    via: 'get', as: :logout
 
 end
