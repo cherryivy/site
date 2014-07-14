@@ -4,7 +4,7 @@ class CharitiesController < ApplicationController
   end
 
   def create
-    @charity = Charity.create(user_params)
+    @charity = Charity.create(charity_params)
     if(@charity.save)
       redirect_to @charity
     else
@@ -18,7 +18,7 @@ class CharitiesController < ApplicationController
 
   protected 
 
-  def user_params
+  def charity_params
     params.require(:charity).permit(
       :name, :login, :email, :contact_person, :phone, :password, :password_confirmation)
   end

@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login_slug
-    "#{view_context.link_to "sign up", signup_path} / #{view_context.link_to "login", login_path}".html_safe
+    "#{view_context.link_to "register", signup_path} / #{view_context.link_to "login", login_path}".html_safe
   end
 
   def flash_message(name, msg)

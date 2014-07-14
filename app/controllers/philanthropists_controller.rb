@@ -4,7 +4,7 @@ class PhilanthropistsController < ApplicationController
   end
 
   def create
-    @philanthropist = Philanthropist.new(user_params)
+    @philanthropist = Philanthropist.new(philanthropist_params)
     if(@philanthropist.save)
       redirect_to root_path
     else
@@ -18,7 +18,7 @@ class PhilanthropistsController < ApplicationController
 
   protected 
 
-  def user_params
+  def philanthropist_params
     params.require(:philanthropist).permit(:name, :login, :email, :password, :password_confirmation)
   end
 
