@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_slug
-    "#{current_user.login} (#{current_user.type}) #{view_context.link_to "logout", logout_path}".html_safe
+    "#{current_user.name} (#{current_user.type}) #{view_context.link_to "logout", logout_path}".html_safe
   end
 
   def login_slug
