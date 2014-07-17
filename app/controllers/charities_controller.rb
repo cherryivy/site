@@ -22,6 +22,7 @@ class CharitiesController < ApplicationController
 
   def charity_params
     params.require(:charity).permit(
-      :name, :login, :email, :contact_person, :phone, :password, :password_confirmation)
+      :name, :login, :email, :contact_person, :phone, 
+        :password, :password_confirmation)
   end
 end
