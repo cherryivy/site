@@ -1,4 +1,6 @@
 class CharitiesController < ApplicationController
+  before_action only: [:new, :create] { limit_to :super_admin }
+
   def new
     @charity = Charity.new
   end
