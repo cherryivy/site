@@ -1,8 +1,16 @@
 = simple_form_for @charity, html: { class: 'form-horizontal'} do |f|
   = f.input   :name
+  = f.input   :full_legal_name
+  = f.input   :ein
   = f.input   :contact_person
   = f.input   :email
   = f.input   :phone
+  = f.input   :address_line_1
+  = f.input   :address_line_2
+  = f.input   :city
+  = f.input   :state
+  = f.input   :zip_code
+  = f.input   :mission 
   = f.input   :password
   = f.input   :password_confirmation
   = f.button  :submit
