@@ -1,5 +1,8 @@
 %h1
   = @charity.name
+%p
+  EIN:
+  = @charity.ein
 %p 
   Contact: 
   = @charity.contact_person
@@ -10,4 +13,12 @@
   Phone: 
   = @charity.phone  
 %p 
-  = debug(params)
+  Address:
+  = "<br>#{@charity.address_line_1}".html_safe unless @charity.address_line_1.blank?
+  = "<br>#{@charity.address_line_2}".html_safe unless @charity.address_line_2.blank?
+  - unless @charity.city.blank? || @charity.state.blank? || @charity.zip_code.blank?
+    = "<br>#{@charity.city}, #{@charity.state} #{@charity.zip_code}".html_safe
+
+%p
+  %b Mission:
+  = @charity.mission

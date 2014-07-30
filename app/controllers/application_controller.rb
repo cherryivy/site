@@ -13,12 +13,16 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_url, alert: 'Please sign in.' unless current_user
   end
 
+  def symbol_to_class(sym)
+    sym.to_s.camelize.constantize
+  end
+
   def limit_to(roles)
     valid_roles = []
     if roles.is_a? Symbol
-      valid_roles << roles.to_s.camelize.constantize
+      valid_roles << symbol_to_class(roles)
     else
-      roles.each { |r| valid_roles << r.to_s.camelize.constantize }
+      roles.each { |r| valid_roles << symbol_to_class(r) }
     end
 
     allowed = false
@@ -27,7 +31,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_slug
-    "#{current_user.login} (#{current_user.type}) #{view_context.link_to "logout", logout_path}".html_safe
+    "#{current_user.name} (#{current_user.type}) #{view_context.link_to "logout", logout_path}".html_safe
   end
 
   def login_slug

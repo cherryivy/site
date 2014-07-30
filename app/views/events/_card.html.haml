@@ -1,0 +1,10 @@
+.eventCard
+  = image_tag event.cover_image.url(:medium)
+  %br
+  %b
+    = link_to(event.title, event_path(event))
+    by 
+    = link_to(event.charity.name, charity_path(event.charity))
+    = "(#{event.start_time.strftime("%H:%M")} - #{event.end_time.strftime("%H:%M")})"
+  %br
+    = event.description

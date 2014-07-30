@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714043015) do
+ActiveRecord::Schema.define(version: 20140730012520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20140714043015) do
     t.string   "cover_image_content_type"
     t.integer  "cover_image_file_size"
     t.datetime "cover_image_updated_at"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.string   "contact_person"
+    t.string   "event_email"
+    t.string   "phone_number"
+    t.boolean  "is_active"
   end
 
   add_index "events", ["charity_id"], name: "index_events_on_charity_id", using: :btree
@@ -37,15 +46,24 @@ ActiveRecord::Schema.define(version: 20140714043015) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "login"
     t.string   "email"
     t.string   "type"
     t.string   "password_digest"
     t.string   "contact_person"
     t.string   "phone"
+    t.string   "zip_code"
+    t.date     "birth_date"
+    t.boolean  "is_active"
+    t.string   "full_legal_name"
+    t.string   "ein"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
+    t.string   "city"
+    t.string   "state"
+    t.text     "mission"
+    t.string   "status"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["login"], name: "index_users_on_login", unique: true, using: :btree
 
 end
