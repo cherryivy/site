@@ -5,11 +5,23 @@
   %b Location:
   =@event.location
 %p
+  %b Address:
+  =@event.address_line_1
+  %br
+  =@event.address_line_2
+  %br
+  ="#{@event.city}, #{@event.state} #{@event.zip_code}"
+
+%p
   %b Start: 
   =@event.start_time
 %p
   %b End: 
   =@event.end_time
+%p
+  %b Contact:
+  =@event.contact_person
+  =" (email: #{@event.event_email}, phone #{@event.phone_number})"
 
 %p
   =@event.description
